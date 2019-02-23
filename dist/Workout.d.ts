@@ -18,4 +18,11 @@ export default class Workout extends Queryable {
     completedSets: WorkoutSet[];
     routines: Routine[];
     readonly totalTime: number;
+    toJSON(): {
+        id: Id<Workout, number>;
+        completedSets: WorkoutSet[];
+        routines: Routine[];
+        startTime: number;
+        endTime: number;
+    };
 }

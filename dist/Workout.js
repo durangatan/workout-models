@@ -55,6 +55,15 @@ var Workout = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Workout.prototype.toJSON = function () {
+        return {
+            id: this.id,
+            completedSets: this._completedSets || [],
+            routines: this._routines || [],
+            startTime: this.startTime,
+            endTime: this.endTime
+        };
+    };
     return Workout;
 }(_1.Queryable));
 exports.default = Workout;
