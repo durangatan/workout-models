@@ -3,7 +3,7 @@ import { ExerciseId } from './Exercise';
 import { Id } from '../workout-utils';
 export type SetType = 'Default' | 'Warmup';
 
-export type WorkoutSetId = Id<'WorkoutSet', number>;
+export type WorkoutSetId = Id<WorkoutSet, number>;
 
 export type WorkoutSetArguments = {
   id?: number;
@@ -12,7 +12,8 @@ export type WorkoutSetArguments = {
   repetitions: number;
   notes?: string;
   type?: SetType;
-  exercise: Exercise;
+  exercise?: Exercise;
+  completed?: boolean;
 };
 
 export default class WorkoutSet extends Queryable {
@@ -21,18 +22,20 @@ export default class WorkoutSet extends Queryable {
   weight: number;
   repetitions: number;
   notes?: string;
-  type: string;
+  type: SetType;
   _exercise?: Exercise;
+  _completed: boolean;
 
   constructor(args: WorkoutSetArguments) {
     super();
-    this.id = args.id ? WorkoutSet.createId(args.id) : null;
+    this.id = args.id ? WorkoutSet.createId(args.id) : undefined;
     this.exerciseId = args.exerciseId;
     this.weight = args.weight;
     this.repetitions = args.repetitions;
     this.notes = args.notes;
     this.type = args.type || 'Default';
     this._exercise = args.exercise;
+    this._completed = args.completed || false;
   }
 
   static createId(id: number) {
@@ -45,6 +48,14 @@ export default class WorkoutSet extends Queryable {
 
   set exercise(exercise) {
     this._exercise = exercise;
+  }
+
+  get completed() {
+    return this._completed;
+  }
+
+  set completed(completed: boolean) {
+    this._completed = completed;
   }
 
   toJSON() {

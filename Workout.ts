@@ -1,13 +1,13 @@
-import { Queryable, CompletedSet, Routine } from './';
+import { Queryable, Routine, WorkoutSet } from './';
 import { Id } from '../workout-utils';
 
-export type WorkoutId = Id<'Workout', number>;
+export type WorkoutId = Id<Workout, number>;
 
 export type WorkoutArguments = {
   id?: number;
   startTime: number;
   endTime: number;
-  completedSets?: Array<CompletedSet>;
+  completedSets?: Array<WorkoutSet>;
   routines?: Array<Routine>;
 };
 
@@ -15,12 +15,12 @@ export default class Workout extends Queryable {
   id?: WorkoutId;
   startTime: number;
   endTime: number;
-  _completedSets?: Array<CompletedSet>;
+  _completedSets?: Array<WorkoutSet>;
   _routines?: Array<Routine>;
 
   constructor(args: WorkoutArguments) {
     super();
-    this.id = Workout.createId(args.id);
+    this.id = args.id ? Workout.createId(args.id) : undefined;
     this.startTime = args.startTime;
     this.endTime = args.endTime;
     this._completedSets = args.completedSets;
@@ -45,5 +45,9 @@ export default class Workout extends Queryable {
 
   set routines(routines) {
     this._routines = routines;
+  }
+
+  get totalTime() {
+    return this.endTime - this.startTime;
   }
 }

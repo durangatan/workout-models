@@ -3,7 +3,7 @@ import { Id } from '../workout-utils';
 import { RoutineId } from './Routine';
 import { WorkoutSetId } from './WorkoutSet';
 
-export type RoutineSetId = Id<'RoutineSet', number>;
+export type RoutineSetId = Id<RoutineSet, number>;
 
 export type RoutineSetArguments = {
   id?: number;
