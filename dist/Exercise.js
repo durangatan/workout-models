@@ -21,9 +21,9 @@ var Exercise = /** @class */ (function (_super) {
         _this.id = args.id ? Exercise.createId(args.id) : null;
         _this.machineId = args.machineId;
         _this.name = args.name;
-        _this.seatSetting = args.seatSetting;
-        _this.rangeSetting = args.rangeSetting;
-        _this.notes = args.notes;
+        _this.seatSetting = args.seatSetting || null;
+        _this.rangeSetting = args.rangeSetting || null;
+        _this.notes = args.notes || null;
         return _this;
     }
     Exercise.createId = function (id) {

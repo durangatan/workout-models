@@ -10,7 +10,6 @@ var Queryable = /** @class */ (function () {
             var _this = this;
             return Object.keys(this)
                 .filter(function (key) {
-                var value = _this[key];
                 if (typeof key === 'string' && key[0] === '_') {
                     return false;
                 }
