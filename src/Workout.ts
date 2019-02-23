@@ -49,4 +49,14 @@ export default class Workout extends Queryable {
   get totalTime() {
     return this.endTime - this.startTime;
   }
+
+  toJSON() {
+    return {
+      id: this.id,
+      completedSets: this._completedSets || [],
+      routines: this._routines || [],
+      startTime: this.startTime,
+      endTime: this.endTime
+    };
+  }
 }
