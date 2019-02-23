@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/durangatan/workout-models/issues"
   },
-  "homepage": "https://github.com/durangatan/workout-models#readme"
+  "homepage": "https://github.com/durangatan/workout-models#readme",
+  "dependencies":{
+    "workout-utils": "git+https://github.com/durangatan/workout-utils.git"
+  }
 }

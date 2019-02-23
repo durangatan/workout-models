@@ -1,6 +1,6 @@
 import { Queryable, Exercise } from './';
 import { ExerciseId } from './Exercise';
-import { Id } from '../workout-utils';
+import { Id } from 'workout-utils';
 export type SetType = 'Default' | 'Warmup';
 
 export type WorkoutSetId = Id<WorkoutSet, number>;

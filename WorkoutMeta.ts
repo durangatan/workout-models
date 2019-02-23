@@ -1,5 +1,5 @@
 import { Queryable } from './';
-import { Id } from '../workout-utils';
+import { Id } from 'workout-utils';
 import { WorkoutId } from './Workout';
 export type WorkoutMetaId = Id<WorkoutMeta, number>;
 

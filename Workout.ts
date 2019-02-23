@@ -1,5 +1,5 @@
 import { Queryable, Routine, WorkoutSet } from './';
-import { Id } from '../workout-utils';
+import { Id } from 'workout-utils';
 
 export type WorkoutId = Id<Workout, number>;
 
