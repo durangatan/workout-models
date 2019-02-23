@@ -22,9 +22,9 @@ export default class Exercise extends Queryable {
     this.id = args.id ? Exercise.createId(args.id) : null;
     this.machineId = args.machineId;
     this.name = args.name;
-    this.seatSetting = args.seatSetting;
-    this.rangeSetting = args.rangeSetting;
-    this.notes = args.notes;
+    this.seatSetting = args.seatSetting || null;
+    this.rangeSetting = args.rangeSetting || null;
+    this.notes = args.notes || null;
   }
   static createId(id: number) {
     return id as ExerciseId;

@@ -11,9 +11,6 @@ var Queryable = /** @class */ (function () {
             return Object.keys(this)
                 .filter(function (key) {
                 var value = _this[key];
-                if (value === undefined || value === null) {
-                    return false;
-                }
                 if (typeof key === 'string' && key[0] === '_') {
                     return false;
                 }
@@ -27,7 +24,7 @@ var Queryable = /** @class */ (function () {
     Object.defineProperty(Queryable.prototype, "columnValues", {
         get: function () {
             var _this = this;
-            return this.columns.map(function (column) { return _this[column]; });
+            return this.columns.map(function (column) { return (_this[column] ? _this[column] : null); });
         },
         enumerable: true,
         configurable: true

@@ -17,7 +17,6 @@ export default class Queryable {
   get columns(): Array<string> {
     return Object.keys(this)
       .filter(key => {
-        const value = this[key];
         if (typeof key === 'string' && key[0] === '_') {
           return false;
         }
