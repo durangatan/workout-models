@@ -1,5 +1,4 @@
-import { Queryable } from './';
-import { Id } from 'workout-utils';
+import { Queryable,Id } from './';
 import { WorkoutId } from './Workout';
 import { RoutineSetId } from './RoutineSet';
 

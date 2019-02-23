@@ -2,7 +2,8 @@
   "name": "workout-models",
   "version": "0.0.1",
   "description": "Isomorphic TypeScript models for the workout app",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +17,4 @@
     "url": "https://github.com/durangatan/workout-models/issues"
   },
   "homepage": "https://github.com/durangatan/workout-models#readme",
-  "dependencies":{
-    "workout-utils": "git+https://github.com/durangatan/workout-utils.git"
-  }
 }
