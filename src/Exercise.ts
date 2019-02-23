@@ -8,7 +8,7 @@ export type ExerciseArguments = {
   notes?: string;
 };
 
-export type ExerciseId = Id<'Exercise', number>;
+export type ExerciseId = Id<Exercise, number>;
 
 export default class Exercise extends Queryable {
   id?: ExerciseId;

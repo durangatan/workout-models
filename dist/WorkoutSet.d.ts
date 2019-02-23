@@ -27,7 +27,7 @@ export default class WorkoutSet extends Queryable {
     completed: boolean;
     toJSON(): {
         id: Id<WorkoutSet, number>;
-        exerciseId: Id<"Exercise", number>;
+        exerciseId: Id<Exercise, number>;
         weight: number;
         repetitions: number;
         notes: string;

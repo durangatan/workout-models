@@ -7,7 +7,7 @@ export declare type ExerciseArguments = {
     rangeSetting?: string;
     notes?: string;
 };
-export declare type ExerciseId = Id<'Exercise', number>;
+export declare type ExerciseId = Id<Exercise, number>;
 export default class Exercise extends Queryable {
     id?: ExerciseId;
     machineId?: string;
@@ -16,5 +16,5 @@ export default class Exercise extends Queryable {
     rangeSetting?: string;
     notes?: string;
     constructor(args: ExerciseArguments);
-    static createId(id: number): Id<"Exercise", number>;
+    static createId(id: number): Id<Exercise, number>;
 }
