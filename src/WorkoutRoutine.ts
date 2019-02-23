@@ -1,6 +1,4 @@
-import { Queryable, Id } from './';
-import { WorkoutId } from './Workout';
-import { RoutineId } from './Routine';
+import { Queryable, Id, QueryableArguments, WorkoutId, RoutineId } from './';
 
 export type WorkoutRoutineId = Id<WorkoutRoutine, number>;
 
@@ -8,14 +6,14 @@ export type WorkoutRoutineArguments = {
   id?: number;
   workoutId: WorkoutId;
   routineId: RoutineId;
-};
+} & QueryableArguments;
 
 export default class WorkoutRoutine extends Queryable {
   id?: WorkoutRoutineId;
   workoutId: WorkoutId;
   routineId: RoutineId;
   constructor(args: WorkoutRoutineArguments) {
-    super();
+    super(args);
     this.id = args.id ? WorkoutRoutine.createId(args.id) : null;
     this.workoutId = args.workoutId;
     this.routineId = args.routineId;

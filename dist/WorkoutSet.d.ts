@@ -1,5 +1,5 @@
-import { Queryable, Exercise, Id } from './';
-import { ExerciseId } from './Exercise';
+import { Queryable, Exercise, Id, ExerciseId } from './';
+import { QueryableArguments } from './Queryable';
 export declare type SetType = 'Default' | 'Warmup';
 export declare type WorkoutSetId = Id<WorkoutSet, number>;
 export declare type WorkoutSetArguments = {
@@ -11,7 +11,7 @@ export declare type WorkoutSetArguments = {
     type?: SetType;
     exercise?: Exercise;
     completed?: boolean;
-};
+} & QueryableArguments;
 export default class WorkoutSet extends Queryable {
     id?: WorkoutSetId;
     exerciseId?: ExerciseId;

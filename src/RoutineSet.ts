@@ -1,4 +1,4 @@
-import { Queryable, Id } from './';
+import { Queryable, Id, QueryableArguments } from './';
 import { RoutineId } from './Routine';
 import { WorkoutSetId } from './WorkoutSet';
 
@@ -9,7 +9,7 @@ export type RoutineSetArguments = {
   routineId: RoutineId;
   setId: WorkoutSetId;
   ordering: number;
-};
+} & QueryableArguments;
 
 export default class RoutineSet extends Queryable {
   id?: RoutineSetId;
@@ -17,7 +17,7 @@ export default class RoutineSet extends Queryable {
   setId: WorkoutSetId;
   ordering: number;
   constructor(args: RoutineSetArguments) {
-    super();
+    super(args);
     this.id = args.id ? RoutineSet.createId(args.id) : null;
     this.routineId = args.routineId;
     this.setId = args.setId;

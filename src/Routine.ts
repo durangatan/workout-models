@@ -1,4 +1,4 @@
-import { Queryable, RoutineSet, Id } from './';
+import { Queryable, RoutineSet, Id, QueryableArguments } from './';
 
 export type RoutineId = Id<Routine, number>;
 
@@ -6,7 +6,7 @@ export type RoutineArguments = {
   id?: number;
   name: string;
   sets?: Array<RoutineSet>;
-};
+} & QueryableArguments;
 
 export default class Routine extends Queryable {
   id: RoutineId;
@@ -14,7 +14,7 @@ export default class Routine extends Queryable {
   _sets?: Array<RoutineSet>;
 
   constructor(args: RoutineArguments) {
-    super();
+    super(args);
     this.id = args.id ? Routine.createId(args.id) : null;
     this.name = args.name;
     this._sets = args.sets;

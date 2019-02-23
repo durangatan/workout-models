@@ -17,7 +17,7 @@ var _1 = require("./");
 var RoutineSet = /** @class */ (function (_super) {
     __extends(RoutineSet, _super);
     function RoutineSet(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? RoutineSet.createId(args.id) : null;
         _this.routineId = args.routineId;
         _this.setId = args.setId;

@@ -17,7 +17,7 @@ var _1 = require("./");
 var Exercise = /** @class */ (function (_super) {
     __extends(Exercise, _super);
     function Exercise(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? Exercise.createId(args.id) : null;
         _this.machineId = args.machineId;
         _this.name = args.name;

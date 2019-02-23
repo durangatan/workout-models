@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Queryable = /** @class */ (function () {
-    function Queryable() {
+    function Queryable(args) {
+        this.dateAdded = args.dateAdded ? args.dateAdded : Date.now();
+        this.dateUpdated = args.dateUpdated;
     }
     Object.defineProperty(Queryable.prototype, "columns", {
         get: function () {

@@ -17,7 +17,7 @@ var _1 = require("./");
 var Workout = /** @class */ (function (_super) {
     __extends(Workout, _super);
     function Workout(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? Workout.createId(args.id) : undefined;
         _this.startTime = args.startTime;
         _this.endTime = args.endTime;

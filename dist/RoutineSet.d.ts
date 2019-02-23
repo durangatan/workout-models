@@ -1,4 +1,4 @@
-import { Queryable, Id } from './';
+import { Queryable, Id, QueryableArguments } from './';
 import { RoutineId } from './Routine';
 import { WorkoutSetId } from './WorkoutSet';
 export declare type RoutineSetId = Id<RoutineSet, number>;
@@ -7,7 +7,7 @@ export declare type RoutineSetArguments = {
     routineId: RoutineId;
     setId: WorkoutSetId;
     ordering: number;
-};
+} & QueryableArguments;
 export default class RoutineSet extends Queryable {
     id?: RoutineSetId;
     routineId: RoutineId;

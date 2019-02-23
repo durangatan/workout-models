@@ -1,4 +1,4 @@
-export { default as Queryable, QueryableId } from './Queryable';
+export { default as Queryable, QueryableId, QueryableArguments } from './Queryable';
 export { default as Exercise, ExerciseArguments, ExerciseId } from './Exercise';
 export { default as Routine, RoutineArguments, RoutineId } from './Routine';
 export { default as RoutineSet, RoutineSetArguments, RoutineSetId } from './RoutineSet';

@@ -1,4 +1,4 @@
-import { Queryable, Routine, WorkoutSet, Id } from './';
+import { Queryable, Routine, WorkoutSet, Id, QueryableArguments } from './';
 export declare type WorkoutId = Id<Workout, number>;
 export declare type WorkoutArguments = {
     id?: number;
@@ -6,7 +6,7 @@ export declare type WorkoutArguments = {
     endTime: number;
     completedSets?: Array<WorkoutSet>;
     routines?: Array<Routine>;
-};
+} & QueryableArguments;
 export default class Workout extends Queryable {
     id?: WorkoutId;
     startTime: number;

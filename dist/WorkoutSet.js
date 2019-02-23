@@ -17,7 +17,7 @@ var _1 = require("./");
 var WorkoutSet = /** @class */ (function (_super) {
     __extends(WorkoutSet, _super);
     function WorkoutSet(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? WorkoutSet.createId(args.id) : undefined;
         _this.exerciseId = args.exerciseId;
         _this.weight = args.weight;

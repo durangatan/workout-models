@@ -1,5 +1,5 @@
-import { Queryable, Exercise, Id } from './';
-import { ExerciseId } from './Exercise';
+import { Queryable, Exercise, Id, ExerciseId } from './';
+import { QueryableArguments } from './Queryable';
 export type SetType = 'Default' | 'Warmup';
 
 export type WorkoutSetId = Id<WorkoutSet, number>;
@@ -13,7 +13,7 @@ export type WorkoutSetArguments = {
   type?: SetType;
   exercise?: Exercise;
   completed?: boolean;
-};
+} & QueryableArguments;
 
 export default class WorkoutSet extends Queryable {
   id?: WorkoutSetId;
@@ -26,7 +26,7 @@ export default class WorkoutSet extends Queryable {
   _completed: boolean;
 
   constructor(args: WorkoutSetArguments) {
-    super();
+    super(args);
     this.id = args.id ? WorkoutSet.createId(args.id) : undefined;
     this.exerciseId = args.exerciseId;
     this.weight = args.weight;

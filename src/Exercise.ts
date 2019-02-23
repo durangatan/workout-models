@@ -1,4 +1,4 @@
-import { Queryable, Id } from './';
+import { Queryable, Id, QueryableArguments } from './';
 export type ExerciseArguments = {
   id?: number;
   machineId?: string;
@@ -6,7 +6,7 @@ export type ExerciseArguments = {
   seatSetting?: string;
   rangeSetting?: string;
   notes?: string;
-};
+} & QueryableArguments;
 
 export type ExerciseId = Id<Exercise, number>;
 
@@ -18,7 +18,7 @@ export default class Exercise extends Queryable {
   rangeSetting?: string;
   notes?: string;
   constructor(args: ExerciseArguments) {
-    super();
+    super(args);
     this.id = args.id ? Exercise.createId(args.id) : null;
     this.machineId = args.machineId;
     this.name = args.name;

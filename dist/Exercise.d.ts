@@ -1,4 +1,4 @@
-import { Queryable, Id } from './';
+import { Queryable, Id, QueryableArguments } from './';
 export declare type ExerciseArguments = {
     id?: number;
     machineId?: string;
@@ -6,7 +6,7 @@ export declare type ExerciseArguments = {
     seatSetting?: string;
     rangeSetting?: string;
     notes?: string;
-};
+} & QueryableArguments;
 export declare type ExerciseId = Id<Exercise, number>;
 export default class Exercise extends Queryable {
     id?: ExerciseId;

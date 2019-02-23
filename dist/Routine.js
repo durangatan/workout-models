@@ -17,7 +17,7 @@ var _1 = require("./");
 var Routine = /** @class */ (function (_super) {
     __extends(Routine, _super);
     function Routine(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? Routine.createId(args.id) : null;
         _this.name = args.name;
         _this._sets = args.sets;

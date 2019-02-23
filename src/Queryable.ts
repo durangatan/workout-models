@@ -1,8 +1,19 @@
 import { Id } from './';
 
 export type QueryableId = Id<Queryable, number>;
+export type QueryableArguments = {
+  dateAdded?: number;
+  dateUpdated?: number;
+};
 
 export default class Queryable {
+  dateAdded: number;
+  dateUpdated?: number;
+  constructor(args: any) {
+    this.dateAdded = args.dateAdded ? args.dateAdded : Date.now();
+    this.dateUpdated = args.dateUpdated;
+  }
+
   get columns(): Array<string> {
     return Object.keys(this)
       .filter(key => {

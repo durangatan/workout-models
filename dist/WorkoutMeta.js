@@ -17,7 +17,7 @@ var _1 = require("./");
 var WorkoutMeta = /** @class */ (function (_super) {
     __extends(WorkoutMeta, _super);
     function WorkoutMeta(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? WorkoutMeta.createId(args.id) : null;
         _this.workoutId = args.workoutId;
         return _this;

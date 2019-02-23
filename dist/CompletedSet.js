@@ -17,7 +17,7 @@ var _1 = require("./");
 var CompletedSet = /** @class */ (function (_super) {
     __extends(CompletedSet, _super);
     function CompletedSet(args) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, args) || this;
         _this.id = args.id ? CompletedSet.createId(args.id) : null;
         _this.routineSetId = args.routineSetId;
         _this.workoutId = args.workoutId;

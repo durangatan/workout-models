@@ -1,4 +1,4 @@
-import { Queryable, Routine, WorkoutSet, Id } from './';
+import { Queryable, Routine, WorkoutSet, Id, QueryableArguments } from './';
 
 export type WorkoutId = Id<Workout, number>;
 
@@ -8,7 +8,7 @@ export type WorkoutArguments = {
   endTime: number;
   completedSets?: Array<WorkoutSet>;
   routines?: Array<Routine>;
-};
+} & QueryableArguments;
 
 export default class Workout extends Queryable {
   id?: WorkoutId;
@@ -18,7 +18,7 @@ export default class Workout extends Queryable {
   _routines?: Array<Routine>;
 
   constructor(args: WorkoutArguments) {
-    super();
+    super(args);
     this.id = args.id ? Workout.createId(args.id) : undefined;
     this.startTime = args.startTime;
     this.endTime = args.endTime;
