@@ -18,9 +18,6 @@ export default class Queryable {
     return Object.keys(this)
       .filter(key => {
         const value = this[key];
-        if (value === undefined || value === null) {
-          return false;
-        }
         if (typeof key === 'string' && key[0] === '_') {
           return false;
         }
@@ -30,7 +27,7 @@ export default class Queryable {
   }
 
   get columnValues() {
-    return this.columns.map(column => this[column]);
+    return this.columns.map(column => (this[column] ? this[column] : null));
   }
 
   get ownKeys() {
