@@ -1,4 +1,4 @@
-import { Queryable, Routine, RoutineSet, Id, QueryableArguments } from './';
+import { Queryable, Routine, ExerciseSet, Id, QueryableArguments } from './';
 
 export type WorkoutId = Id<Workout, number>;
 
@@ -6,7 +6,7 @@ export type WorkoutArguments = {
   id?: number;
   startTime: number;
   endTime: number;
-  completedSets?: Array<RoutineSet>;
+  completedExerciseSets?: Array<ExerciseSet>;
   routines?: Array<Routine>;
 } & QueryableArguments;
 
@@ -14,7 +14,7 @@ export default class Workout extends Queryable {
   id?: WorkoutId;
   startTime: number;
   endTime: number;
-  _completedSets?: Array<RoutineSet>;
+  _completedExerciseSets?: Array<ExerciseSet>;
   _routines?: Array<Routine>;
 
   constructor(args: WorkoutArguments) {
@@ -22,7 +22,7 @@ export default class Workout extends Queryable {
     this.id = args.id ? Workout.createId(args.id) : undefined;
     this.startTime = args.startTime;
     this.endTime = args.endTime;
-    this._completedSets = args.completedSets;
+    this._completedExerciseSets = args.completedExerciseSets;
     this._routines = args.routines;
   }
 
@@ -30,12 +30,12 @@ export default class Workout extends Queryable {
     return id as WorkoutId;
   }
 
-  get completedSets() {
-    return this._completedSets;
+  get completedExerciseSets() {
+    return this._completedExerciseSets;
   }
 
-  set completedSets(completedSets) {
-    this._completedSets = completedSets;
+  set completedExerciseSets(completedExerciseSets: Array<ExerciseSet>) {
+    this._completedExerciseSets = completedExerciseSets;
   }
 
   get routines() {
