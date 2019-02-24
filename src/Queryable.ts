@@ -9,6 +9,7 @@ export type QueryableArguments = {
 export default class Queryable {
   dateAdded: number;
   dateUpdated?: number;
+  id?: QueryableId;
   constructor(args: any) {
     this.dateAdded = args.dateAdded ? args.dateAdded : Date.now();
     this.dateUpdated = args.dateUpdated;

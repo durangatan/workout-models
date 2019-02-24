@@ -7,6 +7,7 @@ export declare type QueryableArguments = {
 export default class Queryable {
     dateAdded: number;
     dateUpdated?: number;
+    id?: QueryableId;
     constructor(args: any);
     readonly columns: Array<string>;
     readonly columnValues: any[];
