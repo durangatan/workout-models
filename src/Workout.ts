@@ -1,4 +1,4 @@
-import { Queryable, Routine, WorkoutSet, Id, QueryableArguments } from './';
+import { Queryable, Routine, RoutineSet, Id, QueryableArguments } from './';
 
 export type WorkoutId = Id<Workout, number>;
 
@@ -6,7 +6,7 @@ export type WorkoutArguments = {
   id?: number;
   startTime: number;
   endTime: number;
-  completedSets?: Array<WorkoutSet>;
+  completedSets?: Array<RoutineSet>;
   routines?: Array<Routine>;
 } & QueryableArguments;
 
@@ -14,7 +14,7 @@ export default class Workout extends Queryable {
   id?: WorkoutId;
   startTime: number;
   endTime: number;
-  _completedSets?: Array<WorkoutSet>;
+  _completedSets?: Array<RoutineSet>;
   _routines?: Array<Routine>;
 
   constructor(args: WorkoutArguments) {

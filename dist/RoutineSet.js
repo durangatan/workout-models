@@ -20,10 +20,21 @@ var RoutineSet = /** @class */ (function (_super) {
         var _this = _super.call(this, args) || this;
         _this.id = args.id ? RoutineSet.createId(args.id) : null;
         _this.routineId = args.routineId;
-        _this.setId = args.setId;
+        _this.exerciseSetId = args.exerciseSetId;
         _this.ordering = args.ordering;
+        _this._exerciseSet = args.exerciseSet;
         return _this;
     }
+    Object.defineProperty(RoutineSet.prototype, "exerciseSet", {
+        get: function () {
+            return this._exerciseSet;
+        },
+        set: function (exerciseSet) {
+            this._exerciseSet = exerciseSet;
+        },
+        enumerable: true,
+        configurable: true
+    });
     RoutineSet.createId = function (id) {
         return id;
     };

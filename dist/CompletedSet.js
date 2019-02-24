@@ -19,7 +19,7 @@ var CompletedSet = /** @class */ (function (_super) {
     function CompletedSet(args) {
         var _this = _super.call(this, args) || this;
         _this.id = args.id ? CompletedSet.createId(args.id) : null;
-        _this.routineSetId = args.routineSetId;
+        _this.exerciseSetId = args.exerciseSetId;
         _this.workoutId = args.workoutId;
         return _this;
     }

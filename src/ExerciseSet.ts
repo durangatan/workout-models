@@ -1,10 +1,10 @@
-import { Queryable, Exercise, Id, ExerciseId } from './';
+import { Queryable, Exercise, Id, ExerciseId } from '.';
 import { QueryableArguments } from './Queryable';
 export type SetType = 'Default' | 'Warmup';
 
-export type WorkoutSetId = Id<WorkoutSet, number>;
+export type ExerciseSetId = Id<ExerciseSet, number>;
 
-export type WorkoutSetArguments = {
+export type ExerciseSetArguments = {
   id?: number;
   exerciseId?: ExerciseId;
   weight: number;
@@ -15,8 +15,8 @@ export type WorkoutSetArguments = {
   completed?: boolean;
 } & QueryableArguments;
 
-export default class WorkoutSet extends Queryable {
-  id?: WorkoutSetId;
+export default class ExerciseSet extends Queryable {
+  id?: ExerciseSetId;
   exerciseId?: ExerciseId;
   weight: number;
   repetitions: number;
@@ -25,9 +25,9 @@ export default class WorkoutSet extends Queryable {
   _exercise?: Exercise;
   _completed: boolean;
 
-  constructor(args: WorkoutSetArguments) {
+  constructor(args: ExerciseSetArguments) {
     super(args);
-    this.id = args.id ? WorkoutSet.createId(args.id) : undefined;
+    this.id = args.id ? ExerciseSet.createId(args.id) : undefined;
     this.exerciseId = args.exerciseId;
     this.weight = args.weight;
     this.repetitions = args.repetitions;
@@ -38,7 +38,7 @@ export default class WorkoutSet extends Queryable {
   }
 
   static createId(id: number) {
-    return id as WorkoutSetId;
+    return id as ExerciseSetId;
   }
 
   get exercise() {
