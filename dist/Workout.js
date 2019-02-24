@@ -21,19 +21,19 @@ var Workout = /** @class */ (function (_super) {
         _this.id = args.id ? Workout.createId(args.id) : undefined;
         _this.startTime = args.startTime;
         _this.endTime = args.endTime;
-        _this._completedSets = args.completedSets;
+        _this._completedExerciseSets = args.completedExerciseSets;
         _this._routines = args.routines;
         return _this;
     }
     Workout.createId = function (id) {
         return id;
     };
-    Object.defineProperty(Workout.prototype, "completedSets", {
+    Object.defineProperty(Workout.prototype, "completedExerciseSets", {
         get: function () {
-            return this._completedSets;
+            return this._completedExerciseSets;
         },
-        set: function (completedSets) {
-            this._completedSets = completedSets;
+        set: function (completedExerciseSets) {
+            this._completedExerciseSets = completedExerciseSets;
         },
         enumerable: true,
         configurable: true
@@ -58,7 +58,7 @@ var Workout = /** @class */ (function (_super) {
     Workout.prototype.toJSON = function () {
         return {
             id: this.id,
-            completedSets: this._completedSets || [],
+            completedExerciseSets: this._completedExerciseSets || [],
             routines: this._routines || [],
             startTime: this.startTime,
             endTime: this.endTime

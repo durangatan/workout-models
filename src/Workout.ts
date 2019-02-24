@@ -53,7 +53,7 @@ export default class Workout extends Queryable {
   toJSON() {
     return {
       id: this.id,
-      completedSets: this._completedSets || [],
+      completedExerciseSets: this._completedExerciseSets || [],
       routines: this._routines || [],
       startTime: this.startTime,
       endTime: this.endTime
